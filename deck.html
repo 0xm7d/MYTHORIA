@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythoria - Deck Builder</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="deck.js" defer></script>
+</head>
+<body class="bg-[#101018] text-white min-h-screen">
+    <section class="bg-[url('assets/bag.png')] bg-cover bg-center">
+            <header class="flex flex-wrap justify-around items-center gap-5 py-5 px-4 bg-gray-200/25">
+                <a href="index.html" class="flex items-center gap-5 text-3xl font-bold text-gray-300">
+                    <img src="assets/logo.png" class="w-25 h-9" alt="Mythoria">
+                    MYTHORIA
+                </a>
+                <nav class="flex flex-wrap justify-center gap-6 text-white font-semibold text-lg">
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Boutique</a>
+                    <a href="boosters.html" class="text-amber-400">Boosters</a>
+                    <a href="Grimoire.html">Collection</a>
+                    <a href="deck.html">My deck</a>
+                </nav>
+            </header>
+            <div class="flex flex-col items-center gap-5 py-24 px-5">
+                <h1 class="text-5xl md:text-6xl text-gray-300 font-serif text-center">Les Boosters</h1>
+                <p class="text-gray-200 text-center">
+                    Ouvrez vos boosters et découvrez les cartes qui se cachent à l'intérieur.
+                </p>
+            </div>
+        </section>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-serif text-amber-400 mb-4">Deck Builder</h1>
+            <p class="text-gray-400">Construisez votre deck avec vos cartes préférées</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <section class="bg-[#1c1b28] rounded-2xl p-6 border border-amber-900/40">
+                <h2 class="text-3xl font-serif text-amber-300 mb-6">Ma Collection</h2>
+                <div id="collectionItems" class="grid grid-cols-3 sm:grid-cols-4 gap-3 max-h-[650px] overflow-y-auto content-start"></div>
+            </section>
+            <section class="bg-[#1c1b28] rounded-2xl p-6 border border-amber-900/40">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-3xl font-serif text-amber-300">Mon Deck</h2>
+                    <span id="deckCount" class="bg-amber-900 px-4 py-2 rounded-full text-amber-100">0 / 20</span>
+                </div>
+                <div id="deckItems" class="grid grid-cols-3 sm:grid-cols-4 gap-3 max-h-[650px] overflow-y-auto content-start"></div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
