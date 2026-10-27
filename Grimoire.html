@@ -1,58 +1,63 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> My Grimoire</title>
+    <title>My Grimoire</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script type="module" src="grimoire.js" defer></script>
 </head>
-<body class="bg-[url('assets/background.png')] w-full min-h-screen  bg-cover bg-center bg-no-repeat">
-    <header class="flex flex-wrap justify-around items-center gap-5 py-5 px-4 bg-gray-200/25">
-                <a href="index.html" class="flex items-center gap-5 text-3xl font-bold text-gray-300">
-                    <img src="assets/logo.png" class="w-25 h-9" alt="Mythoria">
-                    MYTHORIA
-                </a>
-                <nav class="flex flex-wrap justify-center gap-6 text-white font-semibold text-lg">
-                    <a href="index.html">Home</a>
-                    <a href="shop.html">Boutique</a>
-                    <a href="boosters.html">Boosters</a>
-                    <a href="Grimoire.html" class="text-amber-400">Collection</a>
-                    <a href="deck.html">My deck</a>
-                    <!-- <a href="arena.html">Arena</a> -->
-                </nav>
-            </header>
-<div class="w-full max-w-[1200px] mx-auto flex pt-12 relative right-25 ">
-    <section class="w-1/2 min-w-0 px-8 pt-20 pb-10 relative left-17">
-        <h2 class="text-2xl font-serif text-amber-950 text-center mb-4">
-            Ma Collection
-        </h2>
-        <div class="flex gap-2 mb-3">
-            <select id="typefilter" class="w-1/2 bg-amber-100 text-amber-950 border border-amber-800 rounded px-2 py-1 text-sm">
-                <option value="all">Tous les types</option>
-                <option value="Lumiere">Lumieres</option>
-                <option value="Tenebres">Tenebres</option>
-                <option value="Minion">Minions</option>
-                <option value="Spell">Spells</option>
-            </select>
-            <select id="rarityFilter" class="w-1/2 bg-amber-100 text-amber-950 border border-amber-800 rounded px-2 py-1 text-sm">
-                <option value="all">Toutes les raretes</option>
-                <option value="Common">Common</option>
-                <option value="Rare">Rare</option>
-                <option value="Legendary">Legendary</option>
-            </select>
-        </div>
-        <div id="collectionItems" class="grid grid-cols-4 gap-2 auto-rows-max h-[570px] overflow-y-auto overflow-x-hidden px-2">
-        </div>
-    </section>
-    <section class="w-1/2 min-w-0 px-10 pt-20 pb-10 relative left-30">
-        <h2 class="text-3xl font-serif text-amber-950 text-center mb-6">
-            Details de la carte
-        </h2>
-        <div id="cardDetails" class="flex flex-col items-center text-amber-950">
-            <p>Selectionnez une carte</p>
-        </div>
-    </section>
-</div>
+<body class="bg-[url('assets/background.png')] w-full min-h-screen bg-cover bg-center bg-no-repeat">
+    <header class="flex flex-col lg:flex-row flex-wrap justify-around items-center gap-4 sm:gap-5 py-5 px-4 bg-gray-200/25">
+        <a href="index.html" class="flex items-center gap-3 sm:gap-5 text-xl sm:text-3xl font-bold text-gray-300">
+            <img src="assets/logo.png" class="w-20 sm:w-25 h-9 object-contain" alt="Mythoria">
+            MYTHORIA
+        </a>
+        <nav class="flex flex-wrap justify-center gap-3 sm:gap-6 text-white font-semibold text-sm sm:text-lg">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Boutique</a>
+            <a href="boosters.html">Boosters</a>
+            <a href="Grimoire.html" class="text-amber-400">Collection</a>
+            <a href="deck.html">My deck</a>
+            <!-- <a href="arena.html">Arena</a> -->
+        </nav>
+    </header>
+
+    <div class="w-full max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-6 lg:gap-8 pt-8 sm:pt-12 px-4 sm:px-6 lg:px-8">
+        <section class="w-full lg:w-1/2 min-w-0 px-3 sm:px-6 lg:px-8 pt-6 lg:pt-20 pb-10">
+            <h2 class="text-2xl font-serif text-amber-950 text-center mb-4">
+                Ma Collection
+            </h2>
+
+            <div class="flex flex-col sm:flex-row gap-2 mb-3">
+                <select id="typefilter" class="w-full sm:w-1/2 bg-amber-100 text-amber-950 border border-amber-800 rounded px-2 py-2 text-sm">
+                    <option value="all">Tous les types</option>
+                    <option value="Lumiere">Lumieres</option>
+                    <option value="Tenebres">Tenebres</option>
+                    <option value="Minion">Minions</option>
+                    <option value="Spell">Spells</option>
+                </select>
+                <select id="rarityFilter" class="w-full sm:w-1/2 bg-amber-100 text-amber-950 border border-amber-800 rounded px-2 py-2 text-sm">
+                    <option value="all">Toutes les raretes</option>
+                    <option value="Common">Common</option>
+                    <option value="Rare">Rare</option>
+                    <option value="Legendary">Legendary</option>
+                </select>
+            </div>
+
+            <div id="collectionItems" class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2 auto-rows-max h-[420px] lg:h-[570px] overflow-y-auto overflow-x-hidden px-2">
+            </div>
+        </section>
+
+        <section class="w-full lg:w-1/2 min-w-0 px-3 sm:px-6 lg:px-10 pt-6 lg:pt-20 pb-10">
+            <h2 class="text-2xl sm:text-3xl font-serif text-amber-950 text-center mb-6">
+                Details de la carte
+            </h2>
+            <div id="cardDetails" class="flex flex-col items-center text-amber-950">
+                <p>Selectionnez une carte</p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

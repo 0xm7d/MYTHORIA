@@ -11,12 +11,12 @@
 <body class="bg-gray-950 text-white">
     <main>
         <section class="bg-[url('assets/bag.png')] bg-cover bg-center">
-            <header class="flex justify-around items-center py-5 bg-gray-200/25">
-                <a href="index.html" class="flex items-center gap-5 text-3xl font-bold text-gray-300">
-                    <img src="assets/logo.png" class="w-25 h-9" alt="Mythoria">
+            <header class="flex flex-col lg:flex-row flex-wrap justify-around items-center gap-4 py-5 px-4 bg-gray-200/25">
+                <a href="index.html" class="flex items-center gap-3 sm:gap-5 text-xl sm:text-3xl font-bold text-gray-300">
+                    <img src="assets/logo.png" class="w-20 sm:w-25 h-9 object-contain" alt="Mythoria">
                     MYTHORIA
                 </a>
-                <div class="flex gap-6 text-white font-semibold text-xl">
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-6 text-white font-semibold text-sm sm:text-xl">
                     <a href="index.html">Home</a>
                     <a href="shop.html" class="text-amber-400">Boutique</a>
                     <a href="boosters.html">Boosters</a>
@@ -25,17 +25,18 @@
                     <a href="arena.html">Arena</a>
                 </div>
             </header>
-            <div class="flex flex-col items-center gap-5 py-24 px-5">
-                <h1 class="text-6xl text-gray-300 font-serif">Les Boosters</h1>
+            <div class="flex flex-col items-center gap-5 py-16 sm:py-24 px-5">
+                <h1 class="text-4xl sm:text-6xl text-gray-300 font-serif text-center">Les Boosters</h1>
                 <p class="text-gray-200 text-center">Découvrez nos boosters mystiques et invoquez des héros, des créatures et des cartes légendaires.</p>
             </div>
         </section>
-        <section class="bg-gray-950 px-8 py-16">
-            <div class="flex flex-wrap justify-center gap-8">
+
+        <section class="bg-gray-950 px-4 sm:px-8 py-12 sm:py-16">
+            <div class="flex flex-col lg:flex-row flex-wrap justify-center gap-8">
                 <div class="w-full lg:w-[70%]">
-                    <h2 class="text-4xl text-gray-300 font-serif mb-8">Nos Boosters</h2>
+                    <h2 class="text-3xl sm:text-4xl text-gray-300 font-serif mb-8">Nos Boosters</h2>
                     <div class="flex flex-wrap justify-center gap-5">
-                        <div class="w-56 h-[600px] bg-gray-900 border border-gray-700 rounded-xl p-3 flex flex-col">
+                        <div class="w-full max-w-56 sm:w-56 h-auto sm:min-h-[600px] bg-gray-900 border border-gray-700 rounded-xl p-3 flex flex-col">
                             <img src="assets/4.png" class="w-full h-56 object-cover rounded-lg" alt="Beginner Pack">
                             <h3 class="text-xl font-bold mt-3">Beginner Pack</h3>
                             <p class="text-gray-400 text-sm mt-2">Un pack idéal pour commencer votre aventure dans Mythoria.</p>
@@ -48,7 +49,7 @@
                             </div>
                             <button class="add-cart bg-amber-700 hover:bg-amber-600 p-3 w-full rounded-lg mt-auto" data-id="1">Ajouter au panier</button>
                         </div>
-                        <div class="w-56 h-[600px] bg-gray-900 border border-gray-700 rounded-xl p-3 flex flex-col">
+                        <div class="w-full max-w-56 sm:w-56 h-auto sm:min-h-[600px] bg-gray-900 border border-gray-700 rounded-xl p-3 flex flex-col">
                             <img src="assets/1.png" class="w-full h-56 object-cover rounded-lg" alt="Summoning of the Legends">
                             <h3 class="text-xl font-bold mt-3">Summoning of the Legends</h3>
                             <p class="text-gray-400 text-sm mt-2">Un pack premium avec de meilleures chances de cartes légendaires.</p>
@@ -61,7 +62,7 @@
                             </div>
                             <button class="add-cart bg-amber-700 hover:bg-amber-600 p-3 w-full rounded-lg mt-auto" data-id="2">Ajouter au panier</button>
                         </div>
-                        <div class="w-56 h-[600px] bg-gray-900 border border-gray-700 rounded-xl p-3 flex flex-col">
+                        <div class="w-full max-w-56 sm:w-56 h-auto sm:min-h-[600px] bg-gray-900 border border-gray-700 rounded-xl p-3 flex flex-col">
                             <img src="assets/2.png" class="w-full h-56 object-cover rounded-lg" alt="Dark Summoning">
                             <h3 class="text-xl font-bold mt-3">Dark Summoning</h3>
                             <p class="text-gray-400 text-sm mt-2">Un booster consacré aux créatures obscures et aux sorts interdits.</p>
@@ -74,7 +75,7 @@
                             </div>
                             <button class="add-cart bg-amber-700 hover:bg-amber-600 p-3 w-full rounded-lg mt-auto" data-id="3">Ajouter au panier</button>
                         </div>
-                        <div class="w-56 h-[600px] bg-gray-900 border border-gray-700 rounded-xl p-3 flex flex-col">
+                        <div class="w-full max-w-56 sm:w-56 h-auto sm:min-h-[600px] bg-gray-900 border border-gray-700 rounded-xl p-3 flex flex-col">
                             <img src="assets/3.png" class="w-full h-56 object-cover rounded-lg" alt="Lucky Pack">
                             <h3 class="text-xl font-bold mt-3">Lucky Pack</h3>
                             <p class="text-gray-400 text-sm mt-2">Un pack mystère avec une chance de découvrir une carte exceptionnelle.</p>
@@ -84,16 +85,17 @@
                                 <button class="decrease border px-3" data-id="4">-</button>
                                 <b id="qty-4">1</b>
                                 <button class="increase border px-3" data-id="4">+</button>
-                           </div>
+                            </div>
                             <button class="add-cart bg-amber-700 hover:bg-amber-600 p-3 w-full rounded-lg mt-auto" data-id="4">Ajouter au panier</button>
                         </div>
                     </div>
                 </div>
+
                 <div id="panier" class="w-full lg:w-[25%] bg-gray-900 border border-gray-700 rounded-xl p-5 h-fit">
                     <h2 class="text-3xl text-gray-300 font-serif">Mon Panier</h2>
-                    <h2 id="panier-num" class="text-3xl text-gray-300 font-serif"> 0</h2>
+                    <h2 id="panier-num" class="text-3xl text-gray-300 font-serif">0</h2>
                     <div id="cartItems" class="mt-6">
-                        <p class=" text-gray-400">Votre panier est vide.</p>
+                        <p class="text-gray-400">Votre panier est vide.</p>
                     </div>
                     <hr class="border-gray-700 my-6">
                     <div class="flex justify-between">
