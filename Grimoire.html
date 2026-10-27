@@ -5,11 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> My Grimoire</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <script src="grimoire.js" defer></script>
 </head>
 <body class="bg-[url('assets/background.png')] w-full min-h-screen  bg-cover bg-center bg-no-repeat">
-    <div>
-        
-    </div>
+<div class="w-full max-w-[1200px] mx-auto flex pt-12 relative right-25 ">
+    <section class="w-1/2 min-w-0 px-8 pt-20 pb-10">
+        <h2 class="text-2xl font-serif text-amber-950 text-center mb-4">
+            Ma Collection
+        </h2>
+        <div id="collectionItems"
+             class="grid grid-cols-4 gap-2 auto-rows-max h-[570px] overflow-y-auto overflow-x-hidden px-2">
+        </div>
+    </section>
+    <section class="w-1/2 min-w-0 px-10 pt-20 pb-10 relative left-50">
+        <h2 class="text-3xl font-serif text-amber-950 text-center mb-6">
+            Details de la carte
+        </h2>
+        <div id="cardDetails" class="flex flex-col items-center text-amber-950">
+            <p>Selectionnez une carte</p>
+        </div>
+    </section>
+</div>
 </body>
 </html>

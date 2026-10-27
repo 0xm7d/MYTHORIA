@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYTHORIA | Boosters</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="opening.js" defer></script>
+</head>
+<body class="bg-gray-950 text-white">
+    <main>
+        <section class="bg-[url('assets/bag.png')] bg-cover bg-center">
+            <header class="flex flex-wrap justify-around items-center gap-5 py-5 px-4 bg-gray-200/25">
+                <a href="index.html" class="flex items-center gap-5 text-3xl font-bold text-gray-300">
+                    <img src="assets/logo.png" class="w-25 h-9" alt="Mythoria">
+                    MYTHORIA
+                </a>
+                <nav class="flex flex-wrap justify-center gap-6 text-white font-semibold text-lg">
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Boutique</a>
+                    <a href="boosters.html" class="text-amber-400">Boosters</a>
+                    <a href="Grimoire.html">Collection</a>
+                </nav>
+            </header>
+            <div class="flex flex-col items-center gap-5 py-24 px-5">
+                <h1 class="text-5xl md:text-6xl text-gray-300 font-serif text-center">Les Boosters</h1>
+                <p class="text-gray-200 text-center">
+                    Ouvrez vos boosters et découvrez les cartes qui se cachent à l'intérieur.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-gray-950 px-5 md:px-8 py-16">
+            <div class="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+                <div class="w-full lg:w-[40%]">
+                    <h2 class="text-3xl text-gray-300 font-serif mb-3">Mes Boosters</h2>
+                    <p class="text-gray-400 mb-8">Choisissez un booster à ouvrir.</p>
+
+                    <div id="inventoryItems" class="flex flex-wrap gap-5">
+                        <p class="text-gray-400">Vous n'avez aucun booster pour le moment.</p>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-[60%] bg-gray-900 border border-gray-700 rounded-xl p-5 md:p-8 h-fit">
+                    <h2 class="text-3xl text-gray-300 font-serif text-center mb-3">Cartes obtenues</h2>
+                    <p class="text-gray-400 text-center mb-8">
+                        Ouvrez un booster pour révéler vos 5 cartes.
+                    </p>
+
+                    <div id="revealedCards" class="flex flex-wrap justify-center items-center gap-4 min-h-[300px]">
+                        <div class="text-center text-gray-500">
+                            <p>Vos cartes apparaîtront ici.</p>
+                        </div>
+                    </div>
+
+                    <p id="openingMessage" class="text-amber-400 text-center mt-6" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
