@@ -3,20 +3,27 @@ const colection = JSON.parse(localStorage.getItem('collection')) || []
 const inventoryItems = document.getElementById('inventoryItems')
 const revealedCards = document.getElementById('revealedCards')
 const cards = [
-    { id: 1, name: "Fire Wolf", type: "Creature", rarity: "Common", img: "assets/cards/1.png" },
-    { id: 2, name: "Forest Archer", type: "Warrior", rarity: "Common", img: "assets/cards/2.png" },
-    { id: 3, name: "Stone Golem", type: "Creature", rarity: "Common", img: "assets/cards/3.png" },
-    { id: 4, name: "Water Spirit", type: "Spirit", rarity: "Common", img: "assets/cards/4.png" },
-    { id: 5, name: "Dark Soldier", type: "Warrior", rarity: "Common", img: "assets/cards/5.png" },
-    { id: 6, name: "Healing Fairy", type: "Spirit", rarity: "Common", img: "assets/cards/6.png" },
-    { id: 7, name: "Shadow Knight", type: "Warrior", rarity: "Rare", img: "assets/cards/7.png" },
-    { id: 8, name: "Thunder Mage", type: "Mage", rarity: "Rare", img: "assets/cards/8.png" },
-    { id: 9, name: "Ice Dragon", type: "Creature", rarity: "Rare", img: "assets/cards/9.png" },
-    { id: 10, name: "Ancient Guardian", type: "Spirit", rarity: "Rare", img: "assets/cards/10.png" },
-    { id: 11, name: "Golden Phoenix", type: "Creature", rarity: "Legendary", img: "assets/cards/11.png" },
-    { id: 12, name: "Eternal Dragon", type: "Creature", rarity: "Legendary", img: "assets/cards/12.png" }
+    { id: 1, name: "Fire Wolf", type: "Creature", rarity: "Common", faction: "Tenebres", attack: 400, hp: 500, img: "assets/cards/1.png" },
+    { id: 2, name: "Forest Archer", type: "Warrior", rarity: "Common", faction: "Lumiere", attack: 300, hp: 400, img: "assets/cards/2.png" },
+    { id: 3, name: "Stone Golem", type: "Creature", rarity: "Common", faction: "Tenebres", attack: 250, hp: 850, img: "assets/cards/3.png" },
+    { id: 4, name: "Water Spirit", type: "Spirit", rarity: "Common", faction: "Lumiere", attack: 200, hp: 600, img: "assets/cards/4.png" },
+    { id: 5, name: "Dark Soldier", type: "Warrior", rarity: "Common", faction: "Tenebres", attack: 350, hp: 450, img: "assets/cards/5.png" },
+    { id: 6, name: "Healing Fairy", type: "Spirit", rarity: "Common", faction: "Lumiere", attack: 150, hp: 500, img: "assets/cards/6.png" },
+    { id: 7, name: "Shadow Knight", type: "Warrior", rarity: "Rare", faction: "Tenebres", attack: 550, hp: 600, img: "assets/cards/7.png" },
+    { id: 8, name: "Thunder Mage", type: "Mage", rarity: "Rare", faction: "Lumiere", attack: 500, hp: 450, img: "assets/cards/8.png" },
+    { id: 9, name: "Ice Dragon", type: "Creature", rarity: "Rare", faction: "Tenebres", attack: 650, hp: 700, img: "assets/cards/9.png" },
+    { id: 10, name: "Ancient Guardian", type: "Spirit", rarity: "Rare", faction: "Lumiere", attack: 350, hp: 900, img: "assets/cards/10.png" },
+    { id: 11, name: "Golden Phoenix", type: "Creature", rarity: "Legendary", faction: "Lumiere", attack: 800, hp: 750, img: "assets/cards/11.png" },
+    { id: 12, name: "Eternal Dragon", type: "Creature", rarity: "Legendary", faction: "Tenebres", attack: 900, hp: 1000, img: "assets/cards/12.png" },
+    { id: 13, name: "Light Paladin", type: "Warrior", rarity: "Common", faction: "Lumiere", attack: 350, hp: 600, img: "assets/cards/13.png" },
+    { id: 14, name: "Dark Assassin", type: "Warrior", rarity: "Common", faction: "Tenebres", attack: 450, hp: 350, img: "assets/cards/14.png" },
+    { id: 15, name: "Sun Priestess", type: "Mage", rarity: "Rare", faction: "Lumiere", attack: 400, hp: 650, img: "assets/cards/15.png" },
+    { id: 16, name: "Night Reaper", type: "Creature", rarity: "Rare", faction: "Tenebres", attack: 650, hp: 550, img: "assets/cards/16.png" },
+    { id: 17, name: "Celestial Knight", type: "Warrior", rarity: "Rare", faction: "Lumiere", attack: 600, hp: 750, img: "assets/cards/17.png" },
+    { id: 18, name: "Abyss Demon", type: "Creature", rarity: "Rare", faction: "Tenebres", attack: 700, hp: 650, img: "assets/cards/18.png" },
+    { id: 19, name: "Divine Seraph", type: "Spirit", rarity: "Legendary", faction: "Lumiere", attack: 850, hp: 900, img: "assets/cards/19.png" },
+    { id: 20, name: "Shadow Overlord", type: "Creature", rarity: "Legendary", faction: "Tenebres", attack: 950, hp: 950, img: "assets/cards/20.png" }
 ];
-
 function Create(id){
     let selec = inventory.find((item) => {
         return item.id === id
