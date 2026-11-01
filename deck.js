@@ -75,3 +75,5 @@ function RemoveDeck(index) {
 }
 Afficher_collection()
 AfficherDeck()
+window.AddDeck = AddDeck;
+window.RemoveDeck = RemoveDeck;
