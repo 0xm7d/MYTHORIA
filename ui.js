@@ -1,7 +1,6 @@
 import { gameState } from "./state.js";
 import { CallCard } from "./combat.js";
 import { AddCart_hand } from "./combat.js";
-import { CallOppenentCard } from "./combat.js";
 const player_hand = document.getElementById("player-hand");
 const player_battlefield = document.getElementById("player-battlefield");
 const add_card = document.getElementById("add-card");
@@ -59,7 +58,6 @@ export function AfficherOpenentHand(){
     img.src = "assets/cards/back-card.png"
     img.className = "h-36 flex-1 min-w-0 w-0 object-cover rounded-xl border-2 border-yellow-600"
     img.addEventListener('click', () => {
-      CallOppenentCard()
       AfficherOpenentHand()
       Afficher_O_Battlefield()
     })

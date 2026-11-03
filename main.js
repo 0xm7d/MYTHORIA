@@ -1,6 +1,6 @@
 import { cards } from "./cards.js";
 import { gameState } from "./state.js";
-import { AfficherHand , AfficherOpenentHand } from "./ui.js";
+import { AfficherHand , AfficherOpenentHand , Afficher_O_Battlefield} from "./ui.js";
 import { CallOppenentCard } from "./combat.js";
 const deck = JSON.parse(localStorage.getItem('deck'))
 const battleCards = deck.map((card, index) => {
@@ -34,8 +34,9 @@ for(let i = 0 ; i < 5 ; i++){
     gameState.opponent.hand.push(card)
 }
 // console.log(gameState.opponent.hand.length)
-
+// CallOppenentCard()
 AfficherHand()
 AfficherOpenentHand()
+Afficher_O_Battlefield()
 // console.log(gameState.opponent.hand.length)
 // console.log(gameState.opponent.deck.length)
