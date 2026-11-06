@@ -8,8 +8,10 @@ export function CallCard(index){
     if(gameState.hasDroped === true)
         return
     if(gameState.currentTurn === "player"){
+        if (gameState.player.faction === null) return
         const removedCard = gameState.player.hand.splice(index,1)
-        gameState.player.battlefield.push(removedCard[0])
+        const card = applyFactionPenalty(removedCard[0],gameState.player.faction)
+        gameState.player.battlefield.push(card)
         gameState.hasDroped = true
         end_turn.classList.remove('hidden')
     }
@@ -37,6 +39,16 @@ export function CallOppenentCard(){
     if(gameState.opponent.hand.length === 0)
         return
     const carda = gameState.opponent.hand.pop()
-    gameState.opponent.battlefield.push(carda)
+    const card = applyFactionPenalty(carda , gameState.opponent.faction)
+    gameState.opponent.battlefield.push(card)
 }
 
+export function applyFactionPenalty(card , playerfaction){
+    const newCard = {...card}
+    if(newCard.faction != playerfaction){
+        newCard.attack = Math.floor(newCard.attack * 0.8)
+        newCard.hp = Math.floor(newCard.hp * 0.8)
+    }
+    newCard.currentHp = newCard.hp
+    return newCard
+}
