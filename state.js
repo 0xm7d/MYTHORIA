@@ -13,6 +13,8 @@ export const gameState = {
         deck : [],
         battlefield : []
     },
-    currentTurn : null,
+    currentTurn : "player",
+    coinwinner : null,
     gameOver : false,
+    hasDroped : false,
 }
