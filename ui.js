@@ -1,6 +1,6 @@
 import { gameState } from "./state.js";
-import { CallCard } from "./combat.js";
-import { AddCart_hand } from "./combat.js";
+import { CallCard, CallOppenentCard } from "./combat.js";
+import { AddCart_hand , AttackCard} from "./combat.js";
 const player_hand = document.getElementById("player-hand");
 const player_battlefield = document.getElementById("player-battlefield");
 const add_card = document.getElementById("add-card");
@@ -20,6 +20,7 @@ export function AfficherHand() {
     player_hand.appendChild(img);
   });
 }
+let selectAttack = null
 export function AfficherBattlefield() {
   player_battlefield.innerHTML = ""
   for (let i = 0; i < 10; i++) {
@@ -31,6 +32,11 @@ export function AfficherBattlefield() {
       img.src = card.img
       img.className = "w-full h-full object-contain"
       slot.appendChild(img)
+      slot.addEventListener('click', () => {
+        if(gameState.currentTurn !== 'player' || gameState.gameOver) return
+        if(card.hasAttacked) return
+        selectAttack = i
+      })
     }
     player_battlefield.appendChild(slot);
   }
@@ -46,11 +52,18 @@ export function  Afficher_O_Battlefield(){
       img.src = card.img
       img.className = "w-full h-full object-contain"
       slot_2.appendChild(img)
+      slot_2.addEventListener('click', () => {
+        if(selectAttack === null) return
+        AttackCard(selectAttack,i)
+        selectAttack = null
+        AfficherBattlefield()
+        Afficher_O_Battlefield()
+      })
     }
     opponent_battlefield.appendChild(slot_2)
   }
 }
-console.log(gameState.opponent.deck.length)
+// console.log(deck)
 export function AfficherOpenentHand(){
   opponent_hand.innerHTML = ""
   gameState.opponent.hand.forEach(() => {
@@ -58,6 +71,7 @@ export function AfficherOpenentHand(){
     img.src = "assets/cards/back-card.png"
     img.className = "h-36 flex-1 min-w-0 w-0 object-cover rounded-xl border-2 border-yellow-600"
     img.addEventListener('click', () => {
+      // CallOppenentCard()
       AfficherOpenentHand()
       Afficher_O_Battlefield()
     })

@@ -52,3 +52,21 @@ export function applyFactionPenalty(card , playerfaction){
     newCard.currentHp = newCard.hp
     return newCard
 }
+
+export function AttackCard(AttckIndex , TargIndex){
+    if(gameState.currentTurn !== "player" || gameState.gameOver === true)
+        return
+    let attacker = gameState.player.battlefield[AttckIndex]
+    let target = gameState.opponent.battlefield[TargIndex]
+    if(!attacker || !target)
+        return
+    if(attacker.hasAttacked === true)
+        return
+    target.currentHp -= attacker.attack
+    // console.log(attacker.attack)
+    // console.log("after attack",target.currentHp)
+    attacker.hasAttacked = true
+    if(target.currentHp <= 0){
+        gameState.opponent.battlefield.splice(TargIndex,1)
+    }
+}
