@@ -1,15 +1,24 @@
 import { gameState } from "./state.js";
-import { AfficherOpenentHand , Afficher_O_Battlefield } from "./ui.js";
+import { AfficherOpenentHand , Afficher_O_Battlefield , AfficherBattlefield} from "./ui.js";
 import { CallOppenentCard ,Add_O_hand} from "./combat.js";
+import { OpponentAttack } from "./opponent.js";
 export function EndTurn(){
-    if(gameState.currentTurn !== "player")return
+    if(gameState.currentTurn !== "player" || gameState.gameOver)return
     if (gameState.hasDroped === false) return
     gameState.currentTurn = "opponent"
+    gameState.opponent.battlefield.forEach((card) => {
+        card.hasAttacked = false
+    })
     CallOppenentCard()
+    OpponentAttack()
+    AfficherBattlefield()
     Add_O_hand()
     AfficherOpenentHand()
     Afficher_O_Battlefield()
     gameState.currentTurn = "player"
+    gameState.player.battlefield.forEach((card) => {
+        card.hasAttacked = false
+    })
     gameState.hasDroped = false
     document.getElementById('end-turn').classList.add('hidden')
 }
