@@ -8,6 +8,7 @@ const player_battlefield = document.getElementById("player-battlefield");
 const add_card = document.getElementById("add-card");
 const opponent_hand = document.getElementById('opponent-hand')
 const opponent_battlefield = document.getElementById('opponent-battlefield')
+const game_result = document.getElementById('game-result') 
 export function AfficherHand() {
   player_hand.innerHTML = "";
   gameState.player.hand.forEach((card, index) => {
@@ -89,6 +90,7 @@ opponent_hp.addEventListener('click' , () => {
   if (selectAttack === null) return
   DirectAttack(selectAttack)
   AfficherHP()
+  AfficherResult()
   selectAttack = null
   AfficherBattlefield()
 })
@@ -96,4 +98,14 @@ opponent_hp.addEventListener('click' , () => {
 export function AfficherHP(){
   opponent_hp.textContent = `${gameState.opponent.hp} / 3000`
   player_hp.textContent = `${gameState.player.hp} / 3000`
+}
+export function AfficherResult(){
+  if(gameState.gameOver === false) return
+  game_result.classList.remove('hidden')
+  if(gameState.opponent.hp <= 0){
+    game_result.textContent = 'VICTORY'
+  }
+  else if(gameState.player.hp <= 0){
+    game_result.textContent = 'DEFEAT'
+  }
 }
