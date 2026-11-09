@@ -58,10 +58,8 @@ export function AttackCard(AttckIndex , TargIndex){
         return
     let attacker = gameState.player.battlefield[AttckIndex]
     let target = gameState.opponent.battlefield[TargIndex]
-    if(!attacker || !target)
-        return
-    if(attacker.hasAttacked === true)
-        return
+    if(!attacker || !target) return
+    if(attacker.hasAttacked === true) return
     target.currentHp -= attacker.attack
     // console.log(attacker.attack)
     // console.log("after attack",target.currentHp)
@@ -69,4 +67,15 @@ export function AttackCard(AttckIndex , TargIndex){
     if(target.currentHp <= 0){
         gameState.opponent.battlefield.splice(TargIndex,1)
     }
+}
+
+export function DirectAttack(attackIndex){
+    if(gameState.currentTurn !== 'player' || gameState.gameOver) return
+    if(gameState.opponent.battlefield.length > 0) return
+    let attacker = gameState.player.battlefield[attackIndex]
+    if(!attacker || attacker.hasAttacked === true) return
+    gameState.opponent.hp -= attacker.attack
+    attacker.hasAttacked = true
+    if(gameState.opponent.hp <= 0)
+        gameState.gameOver = true
 }

@@ -1,6 +1,8 @@
 import { gameState } from "./state.js";
 import { CallCard, CallOppenentCard } from "./combat.js";
-import { AddCart_hand , AttackCard} from "./combat.js";
+import { AddCart_hand , AttackCard , DirectAttack} from "./combat.js";
+const opponent_hp = document.getElementById('opponent-hp')
+const player_hp = document.getElementById('player-hp')
 const player_hand = document.getElementById("player-hand");
 const player_battlefield = document.getElementById("player-battlefield");
 const add_card = document.getElementById("add-card");
@@ -82,3 +84,16 @@ add_card.addEventListener('click', () => {
   AddCart_hand()
   AfficherHand()
   })
+
+opponent_hp.addEventListener('click' , () => {
+  if (selectAttack === null) return
+  DirectAttack(selectAttack)
+  AfficherHP()
+  selectAttack = null
+  AfficherBattlefield()
+})
+
+export function AfficherHP(){
+  opponent_hp.textContent = `${gameState.opponent.hp} / 3000`
+  player_hp.textContent = `${gameState.player.hp} / 3000`
+}

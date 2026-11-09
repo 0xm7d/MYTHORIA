@@ -1,5 +1,5 @@
 import { gameState } from "./state.js";
-import { AfficherOpenentHand , Afficher_O_Battlefield , AfficherBattlefield} from "./ui.js";
+import { AfficherOpenentHand , Afficher_O_Battlefield , AfficherBattlefield , AfficherHP} from "./ui.js";
 import { CallOppenentCard ,Add_O_hand} from "./combat.js";
 import { OpponentAttack } from "./opponent.js";
 export function EndTurn(){
@@ -11,6 +11,7 @@ export function EndTurn(){
     })
     CallOppenentCard()
     OpponentAttack()
+    AfficherHP()
     AfficherBattlefield()
     Add_O_hand()
     AfficherOpenentHand()
