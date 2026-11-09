@@ -10,7 +10,7 @@
 </head>
 <body class="bg-[url('./assets/background-arena.png')] bg-cover bg-center bg-fixed bg-no-repeat">
     <section class="min-h-screen w-full">
-        <h1 class="text-center text-4xl text-slate-400 relative right-75 font-serif">Play Arena</h1> 
+        <h1 class="text-center text-2xl sm:text-3xl lg:text-4xl text-slate-400 font-serif py-4">Play Arena</h1> 
         <div id="faction-choice" class="hidden justify-center items-center gap-4 my-4">
             <button id="choose-light" class="bg-amber-100 text-amber-950 border-2 border-yellow-500 px-5 py-2 rounded-xl font-serif font-bold hover:bg-yellow-300 transition">
                 Lumiere
@@ -20,21 +20,21 @@
             </button>
         </div>
         <div id="game-result" class="hidden text-center text-3xl text-amber-400 font-bold my-5"></div>
-    <div id="parent" class="grid grid-cols-[minmax(0,1fr)_160px] gap-3 w-full max-w-[850px] mx-auto p-4">
-        <div id="opponent-hand" class="flex col-start-1 row-start-1 gap-3 bg-black/45 backdrop-blur-sm border border-yellow-700/50 rounded-2xl p-3">
+    <div id="parent" class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_160px] gap-3 w-full max-w-[850px] mx-auto p-2 sm:p-4">
+        <div id="opponent-hand" class="flex col-start-1 row-start-1 min-w-0 gap-1 sm:gap-3 bg-black/45 backdrop-blur-sm border border-yellow-700/50 rounded-2xl p-2 sm:p-3 overflow-hidden">
         </div>
-        <div id="child1" class="flex flex-col justify-between border-blue-900 border-4 col-start-2 row-start-1 row-span-3 p-2 bg-black/45 backdrop-blur-sm border border-yellow-700/50 rounded-2xl p-4 shadow-2xl">
-            <div id="top_card" class="border-4 border-yellow-600 bg-mist-900 h-36 rounded-4xl"></div>
-            <div id="buttom_card" class=" flex flex-col items-center justify-center gap-3 border-yellow-600 bg-mist-900 h-36 rounded-4xl">
+        <div id="child1" class="flex flex-col justify-between gap-3 col-start-1 row-start-4 md:col-start-2 md:row-start-1 md:row-span-3 min-w-0 bg-black/45 backdrop-blur-sm border border-yellow-700/50 rounded-2xl p-3 sm:p-4 shadow-2xl">
+            <div id="top_card" class="border-2 sm:border-4 border-yellow-600 bg-gray-900 h-20 md:h-36 rounded-2xl"></div>
+            <div id="buttom_card" class="flex flex-col items-center justify-center gap-3 border-yellow-600 bg-gray-900 min-h-28 md:h-36 rounded-2xl p-2">
                 <button id="add-card" class="w-full border border-yellow-700 rounded-xl bg-amber-950 text-amber-200 py-2 font-serif text-sm">Add Cart</button>
                 <button id="end-turn" class="w-full hidden gap-2 bg-amber-950 text-amber-200 border border-yellow-700 py-2 rounded-xl font-serif font-bold text-sm">End Turn</button>
             </div>
         </div>
-        <div id="terain" class="col-start-1 row-start-2 bg-black/45 backdrop-blur-sm border border-yellow-700/50 rounded-2xl p-4 shadow-2xl">
+        <div id="terain" class="col-start-1 row-start-2 min-w-0 bg-black/45 backdrop-blur-sm border border-yellow-700/50 rounded-2xl p-2 sm:p-4 shadow-2xl">
             <div class="flex justify-end mb-3">
                 <div id="opponent-hp" class="w-48 h-7 bg-red-800 border border-red-500 rounded-lg flex items-center justify-center text-white text-sm font-bold"></div>
             </div>
-            <div id="opponent-battlefield" class="grid grid-cols-5 gap-2">
+            <div id="opponent-battlefield" class="grid grid-cols-5 gap-1 sm:gap-2 min-w-0">
                 <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
                 <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
                 <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
@@ -50,25 +50,25 @@
             <div class="flex justify-start mt-5 mb-3">
                 <div id="player-hp" class="w-48 h-7 bg-red-800 border border-red-500 rounded-lg flex items-center justify-center text-white text-sm font-bold"></div>
             </div>
-            <div id="player-battlefield" class="grid grid-cols-5 gap-2">
-                <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
-                <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
-                <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
-                <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
-                <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
-                <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
-                <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
-                <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
-                <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
-                <div class="h-22 border border-gray-600 bg-gray-300/20"></div>
+            <div id="player-battlefield" class="grid grid-cols-5 gap-1 sm:gap-2 min-w-0">
+                <div class="h-14 sm:h-18 md:h-22 min-w-0 overflow-hidden border border-gray-600 bg-gray-300/20"></div>
+                <div class="h-14 sm:h-18 md:h-22 min-w-0 overflow-hidden border border-gray-600 bg-gray-300/20"></div>
+                <div class="h-14 sm:h-18 md:h-22 min-w-0 overflow-hidden border border-gray-600 bg-gray-300/20"></div>
+                <div class="h-14 sm:h-18 md:h-22 min-w-0 overflow-hidden border border-gray-600 bg-gray-300/20"></div>
+                <div class="h-14 sm:h-18 md:h-22 min-w-0 overflow-hidden border border-gray-600 bg-gray-300/20"></div>
+                <div class="h-14 sm:h-18 md:h-22 min-w-0 overflow-hidden border border-gray-600 bg-gray-300/20"></div>
+                <div class="h-14 sm:h-18 md:h-22 min-w-0 overflow-hidden border border-gray-600 bg-gray-300/20"></div>
+                <div class="h-14 sm:h-18 md:h-22 min-w-0 overflow-hidden border border-gray-600 bg-gray-300/20"></div>
+                <div class="h-14 sm:h-18 md:h-22 min-w-0 overflow-hidden border border-gray-600 bg-gray-300/20"></div>
+                <div class="h-14 sm:h-18 md:h-22 min-w-0 overflow-hidden border border-gray-600 bg-gray-300/20"></div>
             </div>
         </div>
-        <div id="player-hand" class="flex col-start-1 row-start-3 gap-3 bg-black/45 backdrop-blur-sm border border-yellow-700/50 rounded-2xl p-3">
-            <div class="border-4 border-yellow-600 bg-gray-900 h-36 rounded-4xl flex-1 min-w-0"></div>
-            <div class="border-4 border-yellow-600 bg-gray-900 h-36 rounded-4xl flex-1 min-w-0"></div>
-            <div class="border-4 border-yellow-600 bg-gray-900 h-36 rounded-4xl flex-1 min-w-0"></div>
-            <div class="border-4 border-yellow-600 bg-gray-900 h-36 rounded-4xl flex-1 min-w-0"></div>
-            <div class="border-4 border-yellow-600 bg-gray-900 h-36 rounded-4xl flex-1 min-w-0"></div>
+        <div id="player-hand" class="flex col-start-1 row-start-3 min-w-0 gap-1 sm:gap-3 bg-black/45 backdrop-blur-sm border border-yellow-700/50 rounded-2xl p-2 sm:p-3 overflow-hidden">
+            <div class="border-2 sm:border-4 border-yellow-600 bg-gray-900 h-20 sm:h-28 md:h-36 rounded-2xl flex-1 min-w-0"></div>
+            <div class="border-2 sm:border-4 border-yellow-600 bg-gray-900 h-20 sm:h-28 md:h-36 rounded-2xl flex-1 min-w-0"></div>
+            <div class="border-2 sm:border-4 border-yellow-600 bg-gray-900 h-20 sm:h-28 md:h-36 rounded-2xl flex-1 min-w-0"></div>
+            <div class="border-2 sm:border-4 border-yellow-600 bg-gray-900 h-20 sm:h-28 md:h-36 rounded-2xl flex-1 min-w-0"></div>
+            <div class="border-2 sm:border-4 border-yellow-600 bg-gray-900 h-20 sm:h-28 md:h-36 rounded-2xl flex-1 min-w-0"></div>
         </div>
     </div>
     </section>
